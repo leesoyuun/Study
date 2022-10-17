@@ -3,17 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Clock from './Eaxmple/clock';
+import Component_comment from './Eaxmple/comment/Component_comment';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-setInterval(() => {
   root.render(
     <React.StrictMode>
-      <Clock />
+      <Component_comment />
     </React.StrictMode>
   );
-},1000);
 
 
 // If you want to start measuring performance in your app, pass a function
