@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<!--thymeleaf 템플릿 엔진 = html을 막 바꿔준다.-->
+<body>
+<p th:text="'안녕하세요.' +  ${name}">Hi empty</p>
+<!--템플릿 엔진이 정상 활동이 된다면 Hi empty 대신 안녕하세요 ${name}으로 치환 -->
+</body>
+</html>
