@@ -1,0 +1,31 @@
+.sign_up{
+    margin: auto;
+    width: 30rem;
+    border: 10px;
+    background: #FAFAFA;
+}
+input {
+    border-radius: 10px;
+    border-color: #F0F0F0;
+    width: 15vw;
+    height: 3vh;
+    padding: 4px;
+    margin: 5px;
+}
+input:first-child{
+    margin-right: 10px;
+}
+button{
+    background: darksalmon;
+    border: none;
+    border-radius: 5px;
+    height: 3.7vh;
+    color: #fff;
+    font-weight: lighter;
+}
+button:last-child{
+    margin: 10px 5px;
+}
+input:not(:first-child){
+    display: block;
+}
