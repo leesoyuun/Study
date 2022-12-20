@@ -1,18 +1,42 @@
 function Log_in_test() {
-  let login_val = document.getElementById('User_Id').value;
-  let pwd_Val = document.getElementById('User_pwd').value;
-  let regExp = /[ \{\}\[\]\/?.,;:|\)*~`!\-_+┼<>@\#$%&\'\"\\\(\=]/gi;
-  if (login_val.length >= 10 && login_val.match(regExp) == null)  {
-    if(pwd_Val.length < 15 && pwd_Val.length != 0){
-      console.log('ok pwd')
-    }
-    else{
-      console.log('Input your pwd')
-    }
+  const loginId = document.getElementById('User_Id').value;
+  const loginPw = document.getElementById('User_pwd').value;
+
+  const regExp = /[ \{\}\[\]\/?.,;:|\)*~`!\-_+┼<>@\#$%&\'\"\\\(\=]/gi;
+
+  Validation(loginId,loginPw,regExp);
+  regExpValidation(loginId,loginPw,regExp);
+}
+
+function Validation(loginId,loginPw){
+  if(loginId.length >= 10){
+    printError('아이디를 확인해주세요.');
+    return;
   }
-  else{
-    console.log('check your Id or pwd')
+  if(loginPw.length < 15){
+    printError("비밀번호를 확인해주세요.");
+  }
+  if(loginPw.length == 0){
+    printError("비밀번호를 입력해주세요.");
+    return;
   }
 }
+
+function regExpValidation(loginId,loginPw,regExp){
+  if(loginId.match(regExp)!=null){
+    printError("아이디에 특수문자가 포함되어있습니다.");
+    return;
+  }
+  if(loginPw.match(regExp)!=null){
+    printError("비밀번호에 특수문자가 포함되어있습니다.");
+    return;
+  }
+}
+
+function printError(message){
+  alert(message);
+  return;
+}
+
 
 export default Log_in_test

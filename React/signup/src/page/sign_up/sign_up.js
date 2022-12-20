@@ -1,18 +1,38 @@
 function Sign_up_test(){
-  let id_val = document.getElementById('Sign_id').value;
-  let pwd_val = document.getElementById('Sign_pwd').value;
-  let repwd_val = document.getElementById('Sign_repwd').value;
-  let email_val = document.getElementById('Sign_email').value;
+  const IdVal = document.getElementById('Sign_id').value;
+  const PwdVal = document.getElementById('Sign_pwd').value;
+  const RepwdVal = document.getElementById('Sign_repwd').value;
+  const EmailVal = document.getElementById('Sign_email').value;
+
   let regExp = /[ \{\}\[\]\/?.,;:|\)*~`!\-_+┼<>@\#$%&\'\"\\\(\=]/gi;
 
-  if(id_val != '' && id_val.length >= 10 && id_val.match(regExp) == null){
-    if(pwd_val != '' && pwd_val.length <15){
-      if(pwd_val == repwd_val){
-        if(email_val != ''){
-          alert('회원가입이 완료되었습니다.');
-        }
-      }
-    }
+  checklength(IdVal,PwdVal,EmailVal);
+  checkregExp(IdVal,regExp);
+}
+
+function checklength(IdVal,PwdVal,EmailVal){
+  if(IdVal.length == 0 && IdVal.length >= 10){
+    ErrorMessage('ID를 확인해주세요.');
+    return;
+  }
+  if(PwdVal.length = 0 && PwdVal.length >= 15){
+    ErrorMessage('Pwd를 확인해 주세요');
+    return;
+  }
+  if(EmailVal.length = 0){
+    ErrorMessage('이메일을 입력해주세요.');
+    return;
   }
 }
+
+function checkregExp(IdVal,regExp){
+  if(IdVal.match(regExp) == null){
+    ErrorMessage('Id를 확인해 주세요.');
+    return;
+  }
+}
+function ErrorMessage(message){
+  alert(message);
+}
+
 export default Sign_up_test
