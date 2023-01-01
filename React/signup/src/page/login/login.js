@@ -39,24 +39,5 @@ function printError(message){
   return;
 }
 
-function login_axios(loginId,loginPw){
-  axios({
-    url:'https://login-hoy.run.goorm.io/api/account/login',
-    method:'post',
-    data:{
-      'loginId': loginId,
-      'loginPassword' : loginPw
-    },
-    success: function(data){
-      if(data.status == 200){
-        alert('로그인에 성공하셨습니다.');
-      }
-      if(data.status == 400){
-        alert('아이디 혹은 비밀번호를 확인해 주세요.');
-      }
-    }
-  })
-}
-
 
 export default Log_in_test

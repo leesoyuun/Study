@@ -1,0 +1,9 @@
+###올바른 서버 값
+
+POST https://login-hoy.run.goorm.io/api/account/login
+Content-Type: application/json
+
+{
+  "loginId" : "test1",
+  "loginPassword" : "test1"
+}
