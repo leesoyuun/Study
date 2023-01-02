@@ -1,3 +1,5 @@
+import login_axios from "../api/LoginApi";
+
 function Log_in_test() {
   const loginId = document.getElementById('User_Id').value;
   const loginPw = document.getElementById('User_pwd').value;

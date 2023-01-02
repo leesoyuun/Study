@@ -1,7 +1,6 @@
 import React from 'react'
 import Log_in_test from './login'
 import '../sign_up/sign_up.css'
-import '../api/LoginApi'
 
 function Log_in_form(){
   return(
